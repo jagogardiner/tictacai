@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/nysascape/.dotnet/store/|arch|/|tfm|",
+      "/home/nysascape/.nuget/packages"
+    ]
+  }
+}

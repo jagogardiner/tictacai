@@ -15,7 +15,7 @@ namespace csharpai
             /* Generate a new, empty board for a game. */
             string[] board = new string[9];
             for(int i = 0; i < 9; i++) {
-                board[i] = " ";
+                board[i] = "O";
             }
             return board;
         }
@@ -74,6 +74,9 @@ namespace csharpai
             } else {
                 gameBoard.AI = "X";
             }
+
+            System.Console.WriteLine("AI: {0}", gameBoard.AI);
+            System.Console.WriteLine("Player: {0}", gameBoard.human);
         }
 
         static void placeMove(string[] board, int move, string player) {
@@ -105,7 +108,7 @@ namespace csharpai
             return 0;
         }
 
-        static bool checkGameEnd(string[,] board) {
+        static bool checkGameEnd(string[] board) {
             foreach(string p in board) {
                 if(p != " ") {
                     return false;
@@ -117,9 +120,11 @@ namespace csharpai
         static void Main(string[] args)
         {
             Game game = new Game();
-            for(int i = 0; i > 9; i++) {
-                Game.board[i] = gameBoard.AI;
+            for(int i = 0; i < 9; i++) {
+                board[i] = "X";
+                Console.WriteLine(board[i]);
             }
+            gameBoard.printBoard(board);
             Console.WriteLine(Convert.ToInt32(checkWin(board, gameBoard.AI)));
         }
     }

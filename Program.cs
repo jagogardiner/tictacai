@@ -79,12 +79,12 @@ namespace csharpai
             System.Console.WriteLine("Player: {0}", gameBoard.human);
         }
 
-        static void placeMove(string[] board, int move, string player) {
+        public void placeMove(string[] board, int move, string player) {
             /* Just a simple function to place where you want it */
             board[move] = player;
         }
 
-        static int checkWin(string[] board, string player) {
+        public int checkWin(string[] board, string player) {
             string altplayer;
             if(player == "X") {
                 altplayer = "O";
@@ -108,7 +108,7 @@ namespace csharpai
             return 0;
         }
 
-        static bool checkGameEnd(string[] board) {
+        public bool checkGameEnd(string[] board) {
             foreach(string p in board) {
                 if(p != " ") {
                     return false;
@@ -122,10 +122,8 @@ namespace csharpai
             Game game = new Game();
             for(int i = 0; i < 9; i++) {
                 board[i] = "X";
-                Console.WriteLine(board[i]);
             }
             gameBoard.printBoard(board);
-            Console.WriteLine(Convert.ToInt32(checkWin(board, gameBoard.AI)));
         }
     }
 }
